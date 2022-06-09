@@ -1,0 +1,19 @@
+<div class="card">
+  <img src="{{datanews.portada}}" class="image">
+  <p>{{datanews.nombre}}</p>
+  <p-dialog header="{{datanews.nombre}}" [(visible)]="display">
+    <div class="panelcontainer">
+      <h4 class="paneltitle">Titulo:</h4> <p class="paneltext">{{datanews.nombre}}</p>
+      <h4 class="paneltitle">Tipo:</h4><p class="paneltext">{{datanews.tipo}}</p>
+      <h4 class="paneltitle">Descripción:</h4><p class="paneltext">{{datanews.descripcion}}</p>
+      <h4 class="paneltitle">Descripción:</h4><p class="paneltext">{{datanews.descripcion}}</p>
+    </div>
+    <ng-template pTemplate="footer">
+      <button (click)="display=false" id="close">Cerrar</button>
+      <a [routerLink]="['/','view',datanews.movie]"><button role="button" class="boton" id=watch> Ver </button></a>  
+  </ng-template>
+</p-dialog>
+
+<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Descripción</button>
+
+</div> 

@@ -1,0 +1,23 @@
+<div class="principal-movie" style='background-image:linear-gradient(rgba(7, 64, 251, 0.5),rgba(0, 0, 0, .50 ) 100%), url("{{dataprincipal.imageprincipal}}");'>
+    <div class="container">
+        <h3 class="title">{{dataprincipal.nombre}}</h3>
+        <p class="description">
+            {{dataprincipal.descripcion}}
+        </p>
+        <p>Plataforma: {{dataprincipal.plataforma}}</p>
+
+        <p-dialog header="{{dataprincipal.nombre}}" [(visible)]="display" id="panel" style="background-color: rgba(7, 64, 251, 0.5);">
+            <div class="panelcontainer"> <h4 class="paneltitle">Tipo: </h4><p class="paneltext">{{dataprincipal.tipo}}</p>
+                <h4 class="paneltitle">Descripción:</h4> <p class="paneltext">{{dataprincipal.descripcionpanel}}</p>
+                <h4 class="paneltitle">Plataforma:</h4> <p class="paneltext">{{dataprincipal.plataforma}}</p>
+                <h4 class="paneltitle">Categoria:</h4> <p class="paneltext">{{dataprincipal.clasificacion}}</p>
+            </div>
+            <ng-template pTemplate="footer">
+                <button (click)="display=false" id="close">Adios</button>
+            </ng-template>
+        </p-dialog> 
+
+        <a [routerLink]="['/','view',dataprincipal.movie1]"><button role="button" class="boton" ><i class="pi pi-play"></i> Reproducir </button></a>
+        <button role="button" (click)="showDialog()" class="boton"><i class="pi pi-book"></i> Más Información</button> 
+    </div>
+</div>

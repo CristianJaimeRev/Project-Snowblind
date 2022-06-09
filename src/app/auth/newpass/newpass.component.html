@@ -1,0 +1,22 @@
+<section class="auth-form">
+        <form  [formGroup]="newpass" (ngSubmit)="recuperate()"  class="form">
+
+                <h1 id="title">Recuperar Contraseña</h1>
+
+                <p class="text">Introduce tu correo</p>
+
+                <input formControlName="email" class="form-input" type="text" id="mail" name="user_mail" placeholder="example@example.com">
+                <p class="error" *ngIf="newpass.get('email')?.hasError('required') && newpass.get('email')?.touched">El correo es Requerido*</p>
+                <p class="error" *ngIf="newpass.get('email')?.hasError('email') && newpass.get('email')?.touched">No es un correro vaido*</p>
+
+
+                <a class="login" href="/sign-in">Ya me acordé de mi contraseña</a>
+
+                <p id="button-cont">
+                        <button  type="submit" class="btn btn-primary" id="submit" value="Submit" [disabled]="newpass.invalid" >Submit</button>
+                        <button type="reset" class="btn btn-danger" id="reset" value="Reset" >Reset</button>
+                </p>
+
+        </form>
+</section>
+

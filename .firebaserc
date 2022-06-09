@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "final-snowblindvideos": {
+      "hosting": {
+        "snowblind-project": [
+          "final-snowblindvideos"
+        ]
+      }
+    },
+    "final-proyectsnowblind": {
+      "hosting": {
+        "snowblind-project": [
+          "final-proyectsnowblind"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "final-proyectsnowblind"
+  }
+}

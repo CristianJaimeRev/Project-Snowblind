@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="viewcontainer">
+    <section class="moviecontainer">
+        <video src="{{movie}}" id="view" class="movie" controls></video>
+    </section>
+    <div class="btncontainer">
+        <button class="btn btn-success" onclick="reproducir()">Play</button>
+        <button class="btn btn-success" onclick="pausar()">Pausar</button>
+        <button class="btn btn-success" onclick="muted()">Muted</button>
+        <button class="btn btn-success" onclick="voice()"> NotMuted</button>
+        <button class="btn btn-success"onclick="volumeup()"> Volume+</button>
+        <button class="btn btn-success" onclick="volumedown()"> Volume-</button>
+        <button class="btn btn-success" onclick="secondup()"> Second +</button>
+        <button class="btn btn-success" onclick="seconddown()"> Second-</button>
+        <button class="btn btn-success" onclick="reload()"> Reload</button>
+    </div> 
+</div>
+
+<app-footer></app-footer>

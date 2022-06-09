@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<div class="conainersearch">
+    <div class="form-group">
+        <input type="text" class="formgroup" name="filterSearch" placeholder="Search..." [(ngModel)]="filterSearch" id="search">
+
+      <label for="cars">Categorias:
+
+        <select name="selectSearch"  class ="selectsearch" [(ngModel)]="selectSearch">
+          <option value="">Sin filtro</option>
+          <option value="Accion">Acción</option>
+          <option value="Fantasia">Fantasia</option>
+          <option value="Guerra">Guerra</option>
+          <option value="Comedia">Comedia</option>
+          <option value="Drama">Drama</option>
+          <option value="Suspense">Suspense</option>
+          <option value="Terror">Terro</option>
+          <option value="Falso Documental">Falso Documental</option>
+          <option value="Animación para adultos">Animación para adultos</option>
+          <option value="Zombies">Zombies</option>
+          <option value="Posapocaliptico">Posapocaliptico</option>
+        </select> 
+      </label>
+        <label for="cars">Tipo:
+
+        <select name="cars"  class ="selectsearch" [(ngModel)]="selectSearchtype">
+          <option value="">Sin filtro</option>
+          <option value="Serie">Serie</option>
+          <option value="Pelicula">Pelicula</option>
+        </select> 
+      </label>
+    </div>
+    <app-cards [datacards]="card" *ngFor="let card of listdatasearch | pipe:filterSearch | pipeselect:selectSearch | pipetype:selectSearchtype"></app-cards>
+</div>
+
+<app-footer></app-footer>
+

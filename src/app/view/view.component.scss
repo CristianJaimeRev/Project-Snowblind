@@ -1,0 +1,33 @@
+
+.viewcontainer{
+    margin-bottom: 100px;
+}
+.moviecontainer{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; 
+    height: 0; 
+    overflow: hidden;
+    margin-top: 30px;
+   
+}
+.movie{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.btncontainer{
+    background-color: rgba(128, 128, 128, 0.224);
+    border-radius: 5px;
+    padding-left: 50px;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.btn{
+    margin: 20px;
+}

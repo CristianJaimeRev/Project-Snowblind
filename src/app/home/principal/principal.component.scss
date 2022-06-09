@@ -1,0 +1,90 @@
+@media screen and (max-width: 1000px){
+    .principal-movie{
+        font-size: 14px;
+    }
+    .principal-movie .description{
+        max-width: 100%;
+    }
+    .new-movies{
+        margin-bottom: 30px;
+    }
+}
+
+.principal-movie{
+    font-size: 16px;
+    min-height: 40.62em;
+    color: aliceblue;
+    background-size: cover;
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+    
+}
+
+.principal-movie .container{
+    margin: 0 auto;
+    margin-bottom: 6.25em;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 3.12em;
+    margin-bottom: 0.4em;
+}
+
+.description{
+    font-weight: normal;
+    font-size:1em;
+    line-height: 1.75em;
+    max-width: 50%;
+    margin-bottom: 1.25em;
+}
+
+.boton{
+    background-color: rgba(7, 64, 251, 0.5);
+    border: none;
+    border-radius: 0.31em;
+    padding: 0.93em 1.87em;
+    color: black;
+    margin-top: 0.4em;
+    margin-right: 1.25em;
+    cursor:pointer;
+    transition: .3s ease all;
+    font-size:1.12em;
+
+}
+
+.boton:hover{
+    background-color: rgba(161, 7, 251, 0.493);
+    color: white;
+    
+}
+
+.panelcontainer{
+    background-color: #EDEDED;
+    border-radius: 5px;
+    
+}
+.paneltitle{
+    font: small-caps 100%/200% serif;
+    font-size: larger;
+    color: #DA0037;
+    margin-left: 10px;
+}
+
+.paneltext{
+    margin-left: 10px;
+    
+}
+#close{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    width: 150px;
+    font-size: 18px;
+    border-radius: 2px;
+}
