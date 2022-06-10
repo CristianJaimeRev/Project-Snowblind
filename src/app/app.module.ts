@@ -25,7 +25,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { SpinerComponent } from './auth/spiner/spiner.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { PrincipalComponent } from './home/principal/principal.component';
 //primeng
@@ -50,7 +49,6 @@ import { PipetypePipe } from './busqueda/pipetype/pipetype.pipe';
     HomeComponent,
     NavbarComponent,
     NewpassComponent,
-    SpinerComponent,
     FooterComponent,
     BusquedaComponent,
     CardsComponent,

@@ -2,6 +2,8 @@
 
 <div class="conainersearch">
     <div class="form-group">
+
+      <!-- [(ngModel)] Creates a FormControl instance from a domain model and binds it to a form control element.-->
         <input type="text" class="formgroup" name="filterSearch" placeholder="Search..." [(ngModel)]="filterSearch" id="search">
 
       <label for="cars">Categorias:
@@ -30,6 +32,8 @@
         </select> 
       </label>
     </div>
+
+    <!--This is where the cards load thanks to directive ngFor with the array with the information, and the select the pipes with the search-->
     <app-cards [datacards]="card" *ngFor="let card of listdatasearch | pipe:filterSearch | pipeselect:selectSearch | pipetype:selectSearchtype"></app-cards>
 </div>
 

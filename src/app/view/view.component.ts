@@ -13,25 +13,12 @@ export class ViewComponent implements OnInit {
 
 
   ngOnInit(): void {
+    //This is for cuatch the data (The video) from the array in the component and pass to url
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.movie = params.get('movie')!;
      
     });
 
-   /* const App = () => {
-      //const video = useRef<HTMLVideoElement>();
-      const playVideo = (event: any) => {
-        video.current && video.current.play();
-      };
-    
-      return (
-        <div className="App">
-          <video ref={video} loop src={bike} />
-        </div>
-      );
-    };
-      
-  }*/
   }
   
 

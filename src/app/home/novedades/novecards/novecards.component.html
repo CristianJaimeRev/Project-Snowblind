@@ -1,7 +1,9 @@
+  <!--{{datanews.x}} is the call to information from database to novedadescomponent-->
+
 <div class="card">
   <img src="{{datanews.portada}}" class="image">
   <p>{{datanews.nombre}}</p>
-  <p-dialog header="{{datanews.nombre}}" [(visible)]="display">
+  <p-dialog header="{{datanews.nombre}}" [(visible)]="display"><!--the dialog is not visible if not press the button-->
     <div class="panelcontainer">
       <h4 class="paneltitle">Titulo:</h4> <p class="paneltext">{{datanews.nombre}}</p>
       <h4 class="paneltitle">Tipo:</h4><p class="paneltext">{{datanews.tipo}}</p>
@@ -9,11 +11,11 @@
       <h4 class="paneltitle">Descripción:</h4><p class="paneltext">{{datanews.descripcion}}</p>
     </div>
     <ng-template pTemplate="footer">
-      <button (click)="display=false" id="close">Cerrar</button>
+      <button (click)="display=false" id="close">Cerrar</button><!--This button returns boolean false and closes the dialog-->
       <a [routerLink]="['/','view',datanews.movie]"><button role="button" class="boton" id=watch> Ver </button></a>  
   </ng-template>
 </p-dialog>
 
-<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Descripción</button>
+<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Descripción</button> <!--This button returns boolean true and opens the dialog -->
 
 </div> 

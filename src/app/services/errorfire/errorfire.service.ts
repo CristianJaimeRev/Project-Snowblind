@@ -7,7 +7,7 @@ export class ErrorfireService {
 
   constructor() { }
 
-  
+  //This service is for cauth the errors from post int FireAuth and shows it in a message
   errorfire(code:string){
     switch(code){
 

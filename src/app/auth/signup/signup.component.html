@@ -1,45 +1,54 @@
+ <!-- FONT https://angular.io/api/common/NgIf -->
+
 <section class="auth-form">
-    <div *ngIf="!loading" class="body">
         <form [formGroup]="UserRegister" (ngSubmit)="register()" class="form">
+            <!--[formGroup] is how select all form in the "newpass"(the key from FormGroup);(ngSubmit) is how ejecute the function when press the submit -->
         
             <h1 id="title">Sign UP</h1>
-
+            <!-- formControlName is the selector with we select the input -->
             <p class="text"> Correo Electrónico <input formControlName="email" #cajamail class="form-input" type="text" id="mail" name="user_mail" placeholder="example@example.com"></p>
             <p class="error" *ngIf="UserRegister.get('email')?.hasError('required') && UserRegister.get('email')?.touched">El correo es un campo obligatorio*</p>
             <p class="error" *ngIf="UserRegister.get('email')?.hasError('email') && UserRegister.get('email')?.touched">El correo no es válido*</p>
+            <!-- newpass.get('email') is the selector of input, ? is why the value can't be null, 'required' is to check the input is not empty, 'email' is to check the input value is a email -->
 
             <p class="text"> Contraseña <input formControlName="password" #cajapassword  class="form-input" type="password" id="password" name="user_password"></p>
             <p class="error" *ngIf="UserRegister.get('password')?.hasError('required') && UserRegister.get('password')?.touched">La contraseña es un campo obligatorio*</p>
             <p class="error" *ngIf="UserRegister.get('password')?.hasError('minlength') && UserRegister.get('password')?.touched">La contraseña debe tener 6 caracteres*</p>
+             <!-- newpass.get('password') is the selector of input, ? is why the value can't be null, 'required' is to check the input is not empty, 'minlengt' is to check the input value has a length correct, in this case 6 caracters minimum -->
 
             <p class="text"> Repetir contraseña <input formControlName="password2" #cajapassword2  class="form-input" type="password" id="password2" name="user_password"></p>
             <p class="error" *ngIf="UserRegister.get('password2')?.hasError('required') && UserRegister.get('password2')?.touched">Debes repetir la contraseña*</p>
+             <!-- newpass.get('password2') is the selector of input, ? is why the value can't be null, 'required' is to check the input is not empty -->
 
             <p class="text"> Número de Tarjeta <input formControlName="tarjetnum" class="form-input" type="text" id="tarjet_num" name="user_tarjet_num" placeholder="12345678901234"></p>
             <p class="error" *ngIf="UserRegister.get('tarjetnum')?.hasError('required') && UserRegister.get('tarjetnum')?.touched">El número de tarjeta es un campo obligatorio*</p>
             <p class="error" *ngIf="UserRegister.get('tarjetnum')?.hasError('minlength') || UserRegister.get('tarjetnum')?.hasError('maxlength') && UserRegister.get('tarjetnum')?.touched">El número de tarjeta no es válido (Debe tener 16 caracteres)*</p>
-    
+            <p class="error" *ngIf="UserRegister.get('tarjetnum')?.hasError('min') || UserRegister.get('tarjetnum')?.hasError('max') && UserRegister.get('tarjetnum')?.touched">Solo se admiten números*</p>
+            <!-- In this case we must be check if the value has a 16 caracter with 'minlength' and 'tarjetnum' nad if the value is a number with 'max' and 'min'-->
             <p class="text"> CVC <input  formControlName="cvc" class="form-input" type="text" id="cvc" name="user_cvc"placeholder="111"></p>
             <p class="error" *ngIf="UserRegister.get('cvc')?.hasError('required') && UserRegister.get('cvc')?.touched">El cvc es un campo obligatorio*</p>
             <p class="error" *ngIf="UserRegister.get('cvc')?.hasError('minlength')|| UserRegister.get('cvc')?.hasError('maxlength') && UserRegister.get('cvc')?.touched">El cvc no es válido (Debe tener 3 caracteres)*</p>
-    
+            <p class="error" *ngIf="UserRegister.get('cvc')?.hasError('min')|| UserRegister.get('cvc')?.hasError('max') && UserRegister.get('cvc')?.touched">Solo se admiten números*</p>
+            <!-- In this case we must be check if the value has a 3 caracter with 'minlength' and 'tarjetnum' nad if the value is a number with 'max' and 'min'-->
+
             <p class="text"> Fecha de Expiación <input formControlName="datexp" class="form-input" type="date" id="exp_date" name="user_exp_date"></p>
             <p class="error" *ngIf="UserRegister.get('datexp')?.hasError('required') && UserRegister.get('datexp')?.touched">La fecha de expiación es un campo obligatorio*</p>
-    
+            <!-- newpass.get('dataexp') is the selector of input, ? is why the value can't be null, 'required' is to check the input is not empty-->
+
             <p class="text"> Nombre <input formControlName="name" class="form-input" type="text" id="name" name="user_name" placeholder="Juan Ramón Perez"></p>
             <p class="error" *ngIf="UserRegister.get('name')?.hasError('required') && UserRegister.get('name')?.touched">El nombre es un campo obligatorio*</p>
-   
-            <a class="login" href="/sign-in">Ya tienes una cuenta? <small>Haz click aquí</small></a>
+            <!-- newpass.get('name') is the selector of input, ? is why the value can't be null, 'required' is to check the input is not empty-->
 
+            <a class="login" href="/sign-in">Ya tienes una cuenta? <small>Haz click aquí</small></a>  
+            <!--Href if the user has an account-->
 
             <p id="button-cont">
 
                 <button type="submit" class="btn btn-primary" id="submit" value="Submit" [disabled]="UserRegister.invalid">Submit</button>
+                <!-- [disabled] disables the button if [formGroup] is invali, if there is an error in the form -->
                 <button type="reset" class="btn btn-danger" id="reset" value="Reset" >Reset</button>
             </p>
         </form>
-    </div>
-    <app-spiner *ngIf="loading"></app-spiner>
 </section>
 
 

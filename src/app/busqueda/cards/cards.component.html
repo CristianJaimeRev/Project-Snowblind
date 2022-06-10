@@ -1,6 +1,7 @@
 <div class="card">
+  <!--{{datacards.x}} is the call to information from database to busquedacomponent-->
   <img  name="{{datacards.nombre}}" id="{{datacards.id}}" class="data" class="image" src="{{datacards.portada}}" style="width:100%">
-  <p-dialog header="{{datacards.nombre}}" [(visible)]="display">
+  <p-dialog header="{{datacards.nombre}}" [(visible)]="display"><!--the dialog is not visible if not press the button-->
     <div class="panelcontainer">
       <h4 class="paneltitle">Titulo:</h4> <p class="paneltext">{{datacards.nombre}}</p>
       <h4 class="paneltitle">Tipo:</h4><p class="paneltext">{{datacards.tipo}}</p>
@@ -8,10 +9,10 @@
       <h4 class="paneltitle">Descripción:</h4><p class="paneltext">{{datacards.descripcion}}</p>
     </div>
     <ng-template pTemplate="footer">
-      <button (click)="display=false" id="close">Cerrar</button>
+      <button (click)="display=false" id="close">Cerrar</button><!--This button returns boolean false and closes the dialog-->
       <a [routerLink]="['/','view',datacards.movie]"><button role="button" class="boton" id=watch> Ver </button></a> 
   </ng-template>
 </p-dialog>
 
-<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Descripción</button>
+<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show">Descripción</button><!--This button returns boolean true and opens the dialog -->
 </div>

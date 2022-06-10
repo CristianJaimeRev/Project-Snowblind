@@ -1,8 +1,11 @@
+ <!-- FONT https://angular.io/api/common/NgIf -->
 <section class="auth-form">
 
     <form  class="body" (ngSubmit)="login()" [formGroup]="UserSignin" class="form">
+        <!--[formGroup] is how select all form in the "newpass"(the key from FormGroup);(ngSubmit) is how ejecute the function when press the submit -->
 
         <h1 id="title">Sign In</h1>
+        <!-- formControlName is the selector with we select the input -->
 
         <p class="text"> Correo Electrónico <input formControlName="email" class="form-input" type="text" id="mail" name="user_mail" placeholder="example@example.com"></p>
 
@@ -10,10 +13,14 @@
 
         <a class="logup" href="/register">No tienes Cuenta? Crear una cuenta</a>
         <a class="logup" href="/newpass">Recuperar contraseña</a>
+            <!--Href if the user has an account or not remember the password-->
+
 
         <p id="button-cont">
 
             <button  type="submit" class="btn btn-primary" id="submit" value="Submit" [disabled]="UserSignin.invalid">Submit</button>
+            <!-- [disabled] disables the button if [formGroup] is invali, if there is an error in the form -->
+
             <button type="reset" class="btn btn-danger" id="reset" value="Reset" >Reset</button>
         </p>
 

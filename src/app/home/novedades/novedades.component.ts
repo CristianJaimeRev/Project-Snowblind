@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+//GetService is a it is a file in our project that makes a get to the url that was passed to it
 import { GetService } from '../../services/get/get.service';
 
 @Component({
